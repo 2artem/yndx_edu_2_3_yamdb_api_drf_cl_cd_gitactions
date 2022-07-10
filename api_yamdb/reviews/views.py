@@ -77,8 +77,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         title_id = self.kwargs.get('title_id')
         title = get_object_or_404(Title, id=title_id)
-        new_qweryset = Review.objects.filter(title=title)
-        return new_qweryset
+        return Review.objects.filter(title=title)
 
     def perform_create(self, serializer):
         title_id = self.kwargs.get('title_id')
@@ -98,8 +97,7 @@ class CommentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         review_id = self.kwargs.get('review_id')
         review = get_object_or_404(Review, id=review_id)
-        new_qweryset = Comment.objects.filter(review=review)
-        return new_qweryset
+        return Comment.objects.filter(review=review)
 
     def perform_create(self, serializer):
         review_id = self.kwargs.get('review_id')
