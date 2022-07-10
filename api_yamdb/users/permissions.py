@@ -1,5 +1,5 @@
-from rest_framework import permissions
 from django.urls import reverse
+from rest_framework import permissions
 
 
 class AdminAllPermissionOrMeURLGetUPDMyself(permissions.BasePermission):

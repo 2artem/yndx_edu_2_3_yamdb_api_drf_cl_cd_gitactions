@@ -1,7 +1,8 @@
-from django.core.validators import validate_slug
-from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth import get_user_model
+from django.core.validators import (MaxValueValidator, MinValueValidator,
+                                    validate_slug)
 from django.db import models
+
 from .validators import check_value_year_valid
 
 User = get_user_model()

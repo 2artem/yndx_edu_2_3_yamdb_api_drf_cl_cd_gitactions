@@ -1,8 +1,7 @@
 from django.contrib.auth import get_user_model
+from django.contrib.auth.validators import UnicodeUsernameValidator
 from rest_framework import serializers
 from users.models import username_validator_not_past_me
-from django.contrib.auth.validators import UnicodeUsernameValidator
-
 
 User = get_user_model()
 username_validator = UnicodeUsernameValidator()

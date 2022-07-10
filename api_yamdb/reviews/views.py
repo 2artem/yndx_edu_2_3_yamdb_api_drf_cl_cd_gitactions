@@ -1,29 +1,17 @@
 from django.db.models import Avg
-from django_filters.rest_framework import DjangoFilterBackend
 from django.shortcuts import get_object_or_404
-from rest_framework import viewsets
-from rest_framework import filters
-from rest_framework import mixins
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, mixins, viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from .permissions import AdminAllPermission
-from .permissions import AdminAllOnlyAuthorPermission
-from .models import Category
-from .models import Genre
-from .models import Title
-from .models import Review
-from .models import Comment
-from .serializers import TitlesSerializerMethod
-from .serializers import TitlesSerializer
-from .serializers import CategorySerializer
-from .serializers import GenreSerializer
-from .serializers import ReviewSerializer
-from .serializers import CommentSerializer
-from .pagination import CategoryPagination
-from .pagination import GenrePagination
-from .pagination import TitlesPagination
-from .pagination import ReviewPagination
-from .pagination import CommentPagination
+
 from .filters import CustomFilter
+from .models import Category, Comment, Genre, Review, Title
+from .pagination import (CategoryPagination, CommentPagination,
+                         GenrePagination, ReviewPagination, TitlesPagination)
+from .permissions import AdminAllOnlyAuthorPermission, AdminAllPermission
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, ReviewSerializer, TitlesSerializer,
+                          TitlesSerializerMethod)
 
 
 class ListCreateDestroyModelViewSet(mixins.CreateModelMixin,

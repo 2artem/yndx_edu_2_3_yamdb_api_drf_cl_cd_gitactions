@@ -1,14 +1,13 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
-from django.shortcuts import get_object_or_404
 from django.core.mail import send_mail
-from rest_framework_simplejwt.tokens import RefreshToken
+from django.shortcuts import get_object_or_404
 from rest_framework import status
-from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .serializers import UserAuthSerializer
-from .serializers import UserConfirmationCodeSerializer
+from rest_framework.response import Response
+from rest_framework_simplejwt.tokens import RefreshToken
 
+from .serializers import UserAuthSerializer, UserConfirmationCodeSerializer
 
 User = get_user_model()
 
