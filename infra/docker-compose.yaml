@@ -14,9 +14,8 @@ services:
     env_file:
       - ./.env
   web:
-    # build: ../api_yamdb/
     # образ, из которого должен быть запущен контейнер
-    image: avchasovskikh/yamdb
+    image: avchasovskikh/yamdb:latest
     restart: always
     volumes:
       # Контейнер web будет работать с данными, хранящиеся в томе static_value, 
