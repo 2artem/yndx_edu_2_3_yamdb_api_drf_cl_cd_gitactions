@@ -81,6 +81,7 @@ jobs:
           script: |
             sudo docker-compose stop
             sudo docker-compose rm -f web
+            sudo docker image rm avchasovskikh/yamdb:latest
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -89,10 +90,10 @@ jobs:
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker-compose up -d
-            sudo docker-compose exec web python manage.py makemigrations
-            sudo docker-compose exec web python manage.py migrate
-            sudo docker-compose exec web python manage.py collectstatic --no-input
-            sudo docker-compose exec web python manage.py loaddata fixtures.json
+            # sudo docker-compose exec web python manage.py makemigrations
+            # sudo docker-compose exec web python manage.py migrate
+            # sudo docker-compose exec web python manage.py collectstatic --no-input
+            # sudo docker-compose exec web python manage.py loaddata fixtures.json
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
