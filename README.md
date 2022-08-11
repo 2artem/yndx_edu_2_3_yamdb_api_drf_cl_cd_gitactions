@@ -1,6 +1,7 @@
 # Проект YaMDb (CI и CD проекта)
-
+ <!--
 ![example workflow](https://github.com/2artem/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+-->
 
 (yamdb_final - Спринт 16)
 
